@@ -1,0 +1,11 @@
+[versions]
+androidx-core = "1.9.0"
+androidx-navigation = "2.5.3"
+
+[libraries]
+androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+com-google-android-material = "com.google.android.material:material:1.8.0"
