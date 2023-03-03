@@ -1,7 +1,7 @@
 [versions]
+androidGradlePlugin = "7.4.2"
 androidx-core = "1.9.0"
 androidx-navigation = "2.5.3"
-androidGradlePlugin = "7.4.2"
 kotlin = "1.8.10"
 
 [libraries]
@@ -12,15 +12,10 @@ androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fr
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
 com-google-android-material = "com.google.android.material:material:1.8.0"
 
-
-[bundles]
-
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+benmanes-versions = "com.github.ben-manes.versions:0.46.0"
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-benmanes-versions = "com.github.ben-manes.versions:0.41.0"
 version_catalog_update = "nl.littlerobots.version-catalog-update:0.7.0"

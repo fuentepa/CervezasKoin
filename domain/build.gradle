@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
+dependencies {
+    implementation( project(":data"))
+}
+
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
