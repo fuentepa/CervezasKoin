@@ -1,4 +1,4 @@
-package com.example.baseproject
+package com.paf.cervezaskoin
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

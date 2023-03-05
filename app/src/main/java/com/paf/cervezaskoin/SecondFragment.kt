@@ -1,4 +1,4 @@
-package com.example.baseproject
+package com.paf.cervezaskoin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.baseproject.databinding.FragmentSecondBinding
+import com.paf.cervezaskoin.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

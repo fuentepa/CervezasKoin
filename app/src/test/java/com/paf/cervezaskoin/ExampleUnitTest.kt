@@ -1,4 +1,4 @@
-package com.example.baseproject
+package com.paf.cervezaskoin
 
 import org.junit.Test
 

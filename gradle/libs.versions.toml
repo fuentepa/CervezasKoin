@@ -2,7 +2,8 @@
 androidGradlePlugin = "7.4.2"
 androidx-core = "1.9.0"
 androidx-navigation = "2.5.3"
-kotlin = "1.8.10"
+koin-version = "3.3.3"
+kotlin-version = "1.8.10"
 
 [libraries]
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
@@ -11,11 +12,13 @@ androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
 com-google-android-material = "com.google.android.material:material:1.8.0"
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-version" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin-version" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 benmanes-versions = "com.github.ben-manes.versions:0.46.0"
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-version_catalog_update = "nl.littlerobots.version-catalog-update:0.7.0"
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
+version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"

@@ -1,3 +1,4 @@
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.library)
@@ -7,10 +8,11 @@ plugins {
 
 dependencies {
     implementation( project(":data"))
+    implementation(libs.androidx.core.ktx)
 }
 
 android {
-    namespace = "com.example.baseproject.domain"
+    namespace = "com.paf.cervezaskoin.domain"
     compileSdk = 33
 
     compileOptions {

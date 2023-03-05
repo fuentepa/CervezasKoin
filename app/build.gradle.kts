@@ -1,3 +1,4 @@
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.application)
@@ -5,12 +6,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.baseproject"
+    namespace = "com.paf.cervezaskoin"
     compileSdk = 33
     buildToolsVersion = "33.0.1"
 
     defaultConfig {
-        applicationId = "com.example.baseproject"
+        applicationId = "com.paf.cervezaskoin"
         minSdk = 26
         targetSdk  = 33
         versionCode  = 1
@@ -68,6 +69,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
