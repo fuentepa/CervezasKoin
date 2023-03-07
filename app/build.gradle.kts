@@ -71,6 +71,15 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.koin.core)
     implementation(libs.koin.android)
+    implementation(libs.jetbrains.kotlin.serialization)
+    implementation(libs.jetbrains.kotlin.serialization.json)
+    implementation(libs.jetbrains.kotlin.coroutines.android)
+    implementation(libs.squareup.retrofit2.retrofit)
+    implementation(libs.squareup.okhttp3.logging.interceptor)
+    implementation(libs.arrow.core)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

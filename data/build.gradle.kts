@@ -16,4 +16,8 @@ android {
 }
 dependencies {
     implementation(libs.androidx.core.ktx)
+    implementation(libs.jetbrains.kotlin.coroutines.android)
+    implementation(libs.arrow.core)
+    implementation(libs.jetbrains.kotlin.serialization)
+    implementation(libs.jetbrains.kotlin.serialization.json)
 }
