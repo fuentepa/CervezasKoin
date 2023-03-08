@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="@dimen/material_radius"
+    card_view:cardElevation="@dimen/material_elevation"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginLeft="@dimen/card_horizontal_margin"
+    android:layout_marginRight="@dimen/card_horizontal_margin"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:foreground="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/beerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:padding="8dp"
+            android:lines="1"
+            android:minLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+            tools:text="@tools:sample/lorem" />
+
+        <com.paf.cervezaskoin.ui.common.AspectRatioImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="100dp"
+            app:ratio="1.5"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/beerTagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorSecondary"
+            android:padding="4dp"
+            android:lines="2"
+            android:minLines="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
+            tools:text="@tools:sample/lorem/random" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

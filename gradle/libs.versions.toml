@@ -2,8 +2,10 @@
 androidGradlePlugin = "7.4.2"
 androidx-core = "1.9.0"
 androidx-navigation = "2.5.3"
+glide-version = "4.15.0"
 koin-version = "3.3.3"
 kotlin-version = "1.8.10"
+room-version = "2.5.0"
 
 [libraries]
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
@@ -11,8 +13,12 @@ androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-version" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-version" }
 arrow-core = "io.arrow-kt:arrow-core:1.1.5"
 com-google-android-material = "com.google.android.material:material:1.8.0"
+glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide-version" }
+glide-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide-version" }
 jetbrains-kotlin-coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 jetbrains-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin-version" }
 jetbrains-kotlin-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
@@ -26,6 +32,6 @@ squareup-retrofit2-retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 benmanes-versions = "com.github.ben-manes.versions:0.46.0"
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
+kotlin-android = "org.jetbrains.kotlin.android:1.8.20-Beta"
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"

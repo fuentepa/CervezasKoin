@@ -1,4 +1,3 @@
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.application)
@@ -78,7 +77,10 @@ dependencies {
     implementation(libs.squareup.okhttp3.logging.interceptor)
     implementation(libs.arrow.core)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
-
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.glide.glide)
+    annotationProcessor(libs.glide.compiler)
 
 
     testImplementation("junit:junit:4.13.2")

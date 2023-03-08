@@ -8,6 +8,7 @@ plugins {
 dependencies {
     implementation( project(":data"))
     implementation(libs.androidx.core.ktx)
+    implementation(libs.jetbrains.kotlin.coroutines.android)
     implementation(libs.arrow.core)
 }
 
