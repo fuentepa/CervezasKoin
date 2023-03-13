@@ -2,6 +2,7 @@
 androidGradlePlugin = "7.4.2"
 androidx-core = "1.9.0"
 androidx-navigation = "2.5.3"
+com-squareup-retrofit2 = "2.9.0"
 glide-version = "4.15.0"
 koin-version = "3.3.3"
 kotlin-version = "1.8.10"
@@ -13,25 +14,28 @@ androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-version" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-version" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-version" }
 arrow-core = "io.arrow-kt:arrow-core:1.1.5"
 com-google-android-material = "com.google.android.material:material:1.8.0"
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide-version" }
 glide-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide-version" }
+google-code-gson = "com.google.code.gson:gson:2.8.5"
 jetbrains-kotlin-coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
-jetbrains-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin-version" }
+jetbrains-kotlin-serialization-core = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.5.0"
 jetbrains-kotlin-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-version" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin-version" }
-retrofit2-kotlinx-serialization-converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
+retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "com-squareup-retrofit2" }
 squareup-okhttp3-logging-interceptor = "com.squareup.okhttp3:logging-interceptor:4.10.0"
-squareup-retrofit2-retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+squareup-retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "com-squareup-retrofit2" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 benmanes-versions = "com.github.ben-manes.versions:0.46.0"
-kotlin-android = "org.jetbrains.kotlin.android:1.8.20-Beta"
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"
+kotlin-parcelize = "org.jetbrains.kotlin.plugin.parcelize:1.8.10"

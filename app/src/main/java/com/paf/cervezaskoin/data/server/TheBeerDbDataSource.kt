@@ -1,6 +1,5 @@
 package com.paf.cervezaskoin.data.server
 
-import arrow.core.Either
 import com.paf.cervezaskoin.data.source.RemoteDataSource
 import kotlinx.coroutines.suspendCancellableCoroutine
 import retrofit2.Call
@@ -14,7 +13,7 @@ class TheBeerDbDataSource(private val theBeerDb: TheBeerDb) : RemoteDataSource {
 
     override suspend fun getBeers(page: Int, per_page: Int): List<Beer> {
         return suspendCancellableCoroutine { cont ->
-            theBeerDb.service.listBeersAsync(page, per_page)
+            theBeerDb.service.getListBeers(page, per_page)
                 .enqueue(object : Callback<List<Beer>> {
                     override fun onResponse(
                         call: Call<List<Beer>>,

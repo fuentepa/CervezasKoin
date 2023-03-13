@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [Beer::class], version = 1)
+@Database(version = 1, entities = [RoomBeer::class])
 @TypeConverters(RoomListStringProperty::class)
 abstract class BeerDataBase: RoomDatabase() {
     companion object {

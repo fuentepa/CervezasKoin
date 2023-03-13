@@ -10,10 +10,9 @@ class RoomListStringProperty {
 
     @TypeConverter
     fun stringToList(data: String?): List<String> {
-        if (data == null) {
-            return Collections.emptyList()
-        }
-        return Json.decodeFromString<List<String>>(data)
+        return data?.let {
+            Json.decodeFromString<List<String>>(it)
+        } ?: Collections.emptyList()
     }
 
     @TypeConverter

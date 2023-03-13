@@ -35,7 +35,7 @@ class BeersAdapter(private val listener: (Int) -> Unit) : RecyclerView.Adapter<B
             binding.imageView.loadUrl(beer.imageUrl)
             binding.beerTagline.text = beer.tagline
             binding.card.setCardBackgroundColor(
-               CervezasKoinApplication.appContext.getColor(
+                CervezasKoinApplication.appContext.getColor(
                     if (beer.available) android.R.color.white
                     else android.R.color.darker_gray
                 )

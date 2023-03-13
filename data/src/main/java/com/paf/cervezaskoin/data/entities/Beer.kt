@@ -1,18 +1,16 @@
 package com.paf.cervezaskoin.data.entities
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
 
-@Serializable
 data class Beer(
     val id: Int,
     val name: String,
     val tagline: String,
     val description: String,
-    @SerialName("image_url") val imageUrl: String,
+    @SerializedName("image_url") val imageUrl: String,
     val abu: Double,
     val ibu: Double,
-    @SerialName("food_pairing") val foodPairing: List<String>,
+    @SerializedName("food_pairing") val foodPairing: List<String>,
     val available: Boolean
 )

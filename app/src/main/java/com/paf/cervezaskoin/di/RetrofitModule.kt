@@ -26,8 +26,8 @@ fun Application.initDI() {
         modules(listOf(
             appModule,
             retrofitRepositoryModule,
-            useCaseModule,
-            viewModelModule))
+            viewModelModule,
+            useCaseModule))
     }
 }
 
@@ -35,21 +35,27 @@ val appModule = module {
     single(named("baseUrl")) { "https://api.punkapi.com/v2/" }
     single { TheBeerDb(get(named("baseUrl"))) }
     single { BeerDataBase.build(get()) }
+
     factory<LocalDataSource> { RoomDataSource(get()) }
     factory<RemoteDataSource> { TheBeerDbDataSource(get()) }
 }
 
 val retrofitRepositoryModule = module {
-    factory { BeersRepository(get(), get()) }
-}
-
-val useCaseModule = module {
-    factory { GetBeersUseCase(get()) }
-    // factory { FindByIdUseCase(get()) }
-    // factory { ToggleAvailableUseCase(get()) }
+    factory { BeersRepository( get(), get()) }
 }
 
 val viewModelModule = module {
     viewModel { BeersFragmentViewModel( get() ) }
-   // viewModel { (id: Int) -> DetailViewModel( id, get(), get()) }
+    // viewModel { (id: Int) -> DetailViewModel( id, get(), get()) }
 }
+
+val useCaseModule = module {
+    factory {
+        GetBeersUseCase(
+            beersRepository = get()
+        )
+    }
+    // factory { FindByIdUseCase(get()) }
+    // factory { ToggleAvailableUseCase(get()) }
+}
+

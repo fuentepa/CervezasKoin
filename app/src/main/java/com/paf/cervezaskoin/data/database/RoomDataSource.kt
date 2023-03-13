@@ -1,12 +1,12 @@
 package com.paf.cervezaskoin.data.database
 
 
+import com.paf.cervezaskoin.data.entities.Beer
 import com.paf.cervezaskoin.data.source.LocalDataSource
-import com.paf.cervezaskoin.data.toDataBaseBeer
-import com.paf.cervezaskoin.data.toServerBeer
+import com.paf.cervezaskoin.data.toRoomBeer
+import com.paf.cervezaskoin.data.toBeer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.paf.cervezaskoin.data.entities.Beer as ServerBeer
 
 class RoomDataSource(db: BeerDataBase) : LocalDataSource {
 
@@ -14,19 +14,19 @@ class RoomDataSource(db: BeerDataBase) : LocalDataSource {
 
     override suspend fun isEmpty(): Boolean = withContext(Dispatchers.IO) { beerDao.beerCount() <= 0 }
 
-    override suspend fun saveBeers(beers: List<ServerBeer>) {
-        withContext(Dispatchers.IO) { beerDao.insertBeers(beers.map { it.toDataBaseBeer() }) }
+    override suspend fun saveBeers(beers: List<Beer>) {
+        withContext(Dispatchers.IO) { beerDao.insertBeers(beers.map { it.toRoomBeer() }) }
     }
 
-    override suspend fun getBeers(): List<ServerBeer> = withContext(Dispatchers.IO) {
-        beerDao.getAll().map { it.toServerBeer() }
+    override suspend fun getBeers(): List<Beer> = withContext(Dispatchers.IO) {
+        beerDao.getAll().map { it.toBeer() }
     }
 
     override suspend fun findById(id: Int) = withContext(Dispatchers.IO) {
-        beerDao.findById(id).toServerBeer()
+        beerDao.findById(id).toBeer()
     }
 
-    override suspend fun update(beer: ServerBeer) {
-        withContext(Dispatchers.IO) { beerDao.updateBeer( beer.toDataBaseBeer()) }
+    override suspend fun update(beer: Beer) {
+        withContext(Dispatchers.IO) { beerDao.updateBeer( beer.toRoomBeer()) }
     }
 }

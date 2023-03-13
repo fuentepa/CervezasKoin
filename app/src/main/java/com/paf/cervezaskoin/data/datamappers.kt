@@ -1,11 +1,11 @@
 package com.paf.cervezaskoin.data
 
-import com.paf.cervezaskoin.data.database.Beer as DataBaseBeer
-import com.paf.cervezaskoin.data.entities.Beer as ServerBeer
+import com.paf.cervezaskoin.data.database.RoomBeer
+import com.paf.cervezaskoin.data.entities.Beer
 
 
-fun ServerBeer.toDataBaseBeer(): DataBaseBeer =
-    DataBaseBeer(
+fun Beer.toRoomBeer(): RoomBeer =
+    RoomBeer(
         id,
         name,
         tagline,
@@ -17,8 +17,8 @@ fun ServerBeer.toDataBaseBeer(): DataBaseBeer =
         available = true
     )
 
-fun DataBaseBeer.toServerBeer(): ServerBeer =
-    ServerBeer(
+fun RoomBeer.toBeer(): Beer =
+    Beer(
         id,
         name,
         tagline,

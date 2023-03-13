@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface TheBeerDbService {
     @GET("beers")
-    fun listBeersAsync(
+    fun getListBeers(
         @Query("page") page: Int?,
         @Query("per_page") per_page: Int = 50
     ): Call<List<Beer>>

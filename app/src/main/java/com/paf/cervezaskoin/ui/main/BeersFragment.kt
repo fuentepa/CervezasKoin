@@ -5,13 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.paf.cervezaskoin.R
 import com.paf.cervezaskoin.databinding.FragmentBeersBinding
 import com.paf.cervezaskoin.ui.common.State
-import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -53,9 +51,9 @@ class BeersFragment : Fragment() {
             vm.status.collect {
                 when (it){
                     State.EMPTY -> adapter.beers = emptyList()
-                    State.LOADING -> TODO()
+                    State.LOADING -> Unit
                     State.SUCCESS -> vm.beers.collect { adapter.beers = it }
-                    State.ERROR -> TODO()
+                    State.ERROR -> Unit
                 }
             }
         }
