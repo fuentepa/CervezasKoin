@@ -18,10 +18,10 @@ class BeersFragmentViewModel(
     private val getBeersUseCase: GetBeersUseCase
 ): ViewModel() {
 
-    private val _beers = MutableStateFlow<List<Beer>>(emptyList())
-    val beers = _beers.asStateFlow()
+    //private val _beers = MutableStateFlow<List<Beer>>(emptyList())
+    //val beers = _beers.asStateFlow()
 
-    private val _status = MutableStateFlow(State.EMPTY)
+    private val _status =  MutableStateFlow<State<List<Beer>>>(State.EMPTY)
     val status = _status.asStateFlow()
 
     var errorMessage: String? = null
@@ -37,15 +37,15 @@ class BeersFragmentViewModel(
 
     fun getBeers(){
         viewModelScope.launch {
-            _status.value = State.LOADING
+            _status.emit(State.LOADING)
             withContext(Dispatchers.IO) {
                 getBeersUseCase().last().fold( {
-                    errorMessage = it.message
-                    Log.e("getBeers()", errorMessage ?: "Error")
-                    _status.emit(State.ERROR)
+                    it.message?.let { message ->
+                        Log.e("getBeers()", message)
+                        _status.emit(State.ERROR(message))
+                    }
                 }) {
-                    _status.emit(State.SUCCESS)
-                    _beers.emit(it)
+                    _status.emit(State.SUCCESS(it))
                 }
             } //PAF: no envio nada realmente porque quiero que me traiga dos paginas de 50
         }

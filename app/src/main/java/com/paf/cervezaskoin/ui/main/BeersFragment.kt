@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.paf.cervezaskoin.R
 import com.paf.cervezaskoin.databinding.FragmentBeersBinding
-import com.paf.cervezaskoin.ui.common.State
+import com.paf.cervezaskoin.ui.common.State.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -50,10 +50,10 @@ class BeersFragment : Fragment() {
         lifecycleScope.launchWhenCreated {
             vm.status.collect {
                 when (it){
-                    State.EMPTY -> adapter.beers = emptyList()
-                    State.LOADING -> Unit
-                    State.SUCCESS -> vm.beers.collect { adapter.beers = it }
-                    State.ERROR -> Unit
+                    is EMPTY -> adapter.beers = emptyList()
+                    is LOADING -> Unit
+                    is ERROR -> Unit
+                    is SUCCESS -> adapter.beers = it.data
                 }
             }
         }
