@@ -9,7 +9,9 @@ import com.paf.cervezaskoin.data.server.TheBeerDb
 import com.paf.cervezaskoin.data.server.TheBeerDbDataSource
 import com.paf.cervezaskoin.data.source.LocalDataSource
 import com.paf.cervezaskoin.data.source.RemoteDataSource
+import com.paf.cervezaskoin.domain.FindByIdUseCase
 import com.paf.cervezaskoin.domain.GetBeersUseCase
+import com.paf.cervezaskoin.ui.detail.DetailBeerFragmentViewModel
 import com.paf.cervezaskoin.ui.main.BeersFragmentViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -45,8 +47,8 @@ val retrofitRepositoryModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { BeersFragmentViewModel( get() ) }
-    // viewModel { (id: Int) -> DetailViewModel( id, get(), get()) }
+    viewModel { BeersFragmentViewModel( getBeersUseCase = get()) }
+    viewModel { (id: Int) -> DetailBeerFragmentViewModel( beerId = id, findByIdUseCase = get()) }
 }
 
 val useCaseModule = module {
@@ -55,7 +57,8 @@ val useCaseModule = module {
             beersRepository = get()
         )
     }
-    // factory { FindByIdUseCase(get()) }
+
+    factory { FindByIdUseCase(get()) }
     // factory { ToggleAvailableUseCase(get()) }
 }
 

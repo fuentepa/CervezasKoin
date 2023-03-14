@@ -24,8 +24,6 @@ class BeersFragmentViewModel(
     private val _status =  MutableStateFlow<UIState<List<Beer>>>(UIState.EMPTY)
     val status = _status.asStateFlow()
 
-    var errorMessage: String? = null
-
     override fun onCleared() {
         super.onCleared()
         viewModelScope.cancel()

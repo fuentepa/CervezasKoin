@@ -42,8 +42,8 @@ class BeersFragment : Fragment() {
     }
 
     private fun onBeerClicked(id: Int) {
-        //TODO pasar el int como args
-        findNavController().navigate(R.id.action_BeersFragment_to_DetailFragment)
+        val action = BeersFragmentDirections.actionBeersFragmentToDetailFragment(id)
+        findNavController().navigate(action)
     }
 
     private fun setupViewModelObservers(){
@@ -57,6 +57,5 @@ class BeersFragment : Fragment() {
                 }
             }
         }
-
     }
 }
