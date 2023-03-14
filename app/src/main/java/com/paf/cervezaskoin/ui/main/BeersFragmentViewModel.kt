@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.paf.cervezaskoin.data.entities.Beer
 import com.paf.cervezaskoin.domain.GetBeersUseCase
-import com.paf.cervezaskoin.ui.common.State
+import com.paf.cervezaskoin.ui.common.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,7 +21,7 @@ class BeersFragmentViewModel(
     //private val _beers = MutableStateFlow<List<Beer>>(emptyList())
     //val beers = _beers.asStateFlow()
 
-    private val _status =  MutableStateFlow<State<List<Beer>>>(State.EMPTY)
+    private val _status =  MutableStateFlow<UIState<List<Beer>>>(UIState.EMPTY)
     val status = _status.asStateFlow()
 
     var errorMessage: String? = null
@@ -37,15 +37,15 @@ class BeersFragmentViewModel(
 
     fun getBeers(){
         viewModelScope.launch {
-            _status.emit(State.LOADING)
+            _status.emit(UIState.LOADING)
             withContext(Dispatchers.IO) {
                 getBeersUseCase().last().fold( {
                     it.message?.let { message ->
                         Log.e("getBeers()", message)
-                        _status.emit(State.ERROR(message))
+                        _status.emit(UIState.ERROR(message))
                     }
                 }) {
-                    _status.emit(State.SUCCESS(it))
+                    _status.emit(UIState.SUCCESS(it))
                 }
             } //PAF: no envio nada realmente porque quiero que me traiga dos paginas de 50
         }

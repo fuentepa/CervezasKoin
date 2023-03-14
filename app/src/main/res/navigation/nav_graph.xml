@@ -3,27 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/BeersFragment">
+    app:startDestination="@id/beersFragment">
 
     <fragment
-        android:id="@+id/BeersFragment"
+        android:id="@+id/beersFragment"
         android:name="com.paf.cervezaskoin.ui.main.BeersFragment"
         android:label="@string/Beers_fragment_label"
         tools:layout="@layout/fragment_beers">
 
         <action
             android:id="@+id/action_BeersFragment_to_DetailFragment"
-            app:destination="@id/DetalleFragment" />
+            app:destination="@id/detailBeerFragment">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        </action>
+
     </fragment>
 
     <fragment
-        android:id="@+id/DetalleFragment"
+        android:id="@+id/detailBeerFragment"
         android:name="com.paf.cervezaskoin.ui.detail.DetailBeerFragment"
         android:label="@string/detalle_cerveza_fragment_label"
         tools:layout="@layout/fragment_beer_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
 
         <action
             android:id="@+id/action_DetailFragment_to_BeersFragment"
-            app:destination="@id/BeersFragment" />
+            app:destination="@id/beersFragment" />
     </fragment>
 </navigation>

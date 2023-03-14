@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.paf.cervezaskoin.R
 import com.paf.cervezaskoin.databinding.FragmentBeersBinding
-import com.paf.cervezaskoin.ui.common.State.*
+import com.paf.cervezaskoin.ui.common.UIState.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

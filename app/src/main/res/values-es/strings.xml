@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Beers_fragment_label">Cervezas</string>
+    <string name="detalle_cerveza_fragment_label">Detalle</string>
+
+    <string name="action_settings">Ajustes</string>
+
+    <string name="txt_available">disponible</string>
+    <string name="txt_not_available">no disponible</string>
+    <string name="text_abu">ABU</string>
+    <string name="text_ibu">IBU</string>
+    <string name="text_food_pairing">MARIDAJE DE COMIDAS</string>
+</resources>

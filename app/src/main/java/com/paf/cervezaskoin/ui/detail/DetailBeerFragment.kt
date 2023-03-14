@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.paf.cervezaskoin.R
 import com.paf.cervezaskoin.databinding.FragmentBeerDetailBinding
 
 
 class DetailBeerFragment : Fragment() {
 
+    private val args by navArgs<DetailBeerFragmentArgs>()
     private var _binding: FragmentBeerDetailBinding? = null
 
     // This property is only valid between onCreateView and
