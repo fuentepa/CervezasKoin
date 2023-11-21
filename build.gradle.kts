@@ -10,11 +10,13 @@ plugins {
     alias(libs.plugins.benmanes.versions)
     alias(libs.plugins.version.catalog.update)
     alias(libs.plugins.navigation.safeargs) apply false
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 buildscript {
     repositories {
         google()
+        mavenCentral()
     }
     dependencies {
         val nav_version = "2.5.3"

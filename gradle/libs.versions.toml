@@ -21,13 +21,13 @@ arrow-core = "io.arrow-kt:arrow-core:1.2.1"
 com-google-android-material = "com.google.android.material:material:1.10.0"
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide-version" }
 glide-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide-version" }
-google-code-gson = "com.google.code.gson:gson:2.9.1"
+#google-code-gson = "com.google.code.gson:gson:2.9.1"
 jetbrains-kotlin-coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
-jetbrains-kotlin-serialization-core = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.1"
 jetbrains-kotlin-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1"
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin-version" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin-version" }
-retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "com-squareup-retrofit2" }
+#retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "com-squareup-retrofit2" }
+serialization-converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
 squareup-okhttp3-logging-interceptor = "com.squareup.okhttp3:logging-interceptor:4.10.0"
 squareup-retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "com-squareup-retrofit2" }
 
@@ -39,3 +39,4 @@ benmanes-versions = "com.github.ben-manes.versions:0.46.0"
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-version" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }

@@ -3,6 +3,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -18,7 +19,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.jetbrains.kotlin.coroutines.android)
     implementation(libs.arrow.core)
-    //implementation(libs.jetbrains.kotlin.serialization)
-    //implementation(libs.jetbrains.kotlin.serialization.json)
-    implementation(libs.google.code.gson)
+    implementation(libs.jetbrains.kotlin.serialization.json)
+    //implementation(libs.google.code.gson)
 }

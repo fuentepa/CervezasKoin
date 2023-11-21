@@ -1,13 +1,14 @@
 package com.paf.cervezaskoin.data.server
 
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.paf.cervezaskoin.BuildConfig
-import kotlinx.serialization.ExperimentalSerializationApi
+//import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+//import retrofit2.converter.gson.GsonConverterFactory
 
 class TheBeerDb(baseUrl: String) {
 
@@ -26,13 +27,13 @@ class TheBeerDb(baseUrl: String) {
         isLenient = true
     }
 
-    @OptIn(ExperimentalSerializationApi::class)
+    //@OptIn(ExperimentalSerializationApi::class)
     val service: TheBeerDbService = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(okHttpClient)
-        //.addConverterFactory(Json.asConverterFactory(contentType))
+        .addConverterFactory(Json.asConverterFactory(contentType))
         // .addConverterFactory(json.asConverterFactory(contentType))
-        .addConverterFactory(GsonConverterFactory.create())
+        //.addConverterFactory(GsonConverterFactory.create())
         .build()
         .run { create(TheBeerDbService::class.java) }
 }

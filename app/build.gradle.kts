@@ -3,8 +3,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.kotlinx.serialization)
     kotlin("kapt")
-
 }
 
 android {
@@ -73,13 +73,13 @@ dependencies {
     implementation(libs.navigation.ui.ktx)
     implementation(libs.koin.core)
     implementation(libs.koin.android)
-    implementation(libs.jetbrains.kotlin.serialization.core)
     implementation(libs.jetbrains.kotlin.serialization.json)
+    implementation(libs.serialization.converter)
     implementation(libs.jetbrains.kotlin.coroutines.android)
     implementation(libs.squareup.retrofit2.retrofit)
     implementation(libs.squareup.okhttp3.logging.interceptor)
     implementation(libs.arrow.core)
-    implementation(libs.retrofit2.converter.gson)
+    //implementation(libs.retrofit2.converter.gson)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     implementation(libs.glide.glide)
