@@ -16,10 +16,8 @@ class BeersAdapter(private val listener: (Int) -> Unit) : RecyclerView.Adapter<B
         areItemsTheSame = { old, new -> old.id == new.id }
     )
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemBeerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(ItemBeerBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun getItemCount(): Int = beers.size
 

@@ -9,13 +9,13 @@ plugins {
 
 android {
     namespace = "com.paf.cervezaskoin"
-    compileSdk = 33
-    buildToolsVersion = "33.0.1"
+    compileSdk = 34
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId = "com.paf.cervezaskoin"
         minSdk = 26
-        targetSdk  = 33
+        targetSdk  = 34
         versionCode  = 1
         versionName  = "1.0"
 
